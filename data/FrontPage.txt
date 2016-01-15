@@ -1,2 +1,3 @@
-Welcome to THE FIRST CIRCLE
-[HelloThere]
+Welcome to The First Circle.
+There are how many, according to the story?
+[SecondCircle]

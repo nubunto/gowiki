@@ -32,8 +32,8 @@ func loadPage(title string) (*Page, error) {
 	}
 	page := &Page{Title: title, Body: body}
 	page.DisplayBody = template.HTML(pageName.ReplaceAllFunc(page.Body, func(newBody []byte) []byte {
-		matched := pageName.FindStringSubmatch(string(newBody))
-		return []byte(`<a href="/view/` + matched[1] + `">` + matched[1] + "</a>")
+		l := len(newBody) - 1
+		return []byte(`<a href="/view/` + string(newBody[1:l]) + `">` + string(newBody[1:l]) + "</a>")
 	}))
 	return page, nil
 }
