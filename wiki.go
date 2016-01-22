@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"html/template"
 	"io/ioutil"
 	"net/http"
@@ -9,9 +8,9 @@ import (
 )
 
 type Page struct {
-	Title       string        `json:"title"`
-	Body        []byte        `json:"body"`
-	DisplayBody template.HTML `json:"-"`
+	Title       string
+	Body        []byte
+	DisplayBody template.HTML
 }
 
 type titleHandlerFunc func(http.ResponseWriter, *http.Request, string)
